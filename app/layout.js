@@ -1,0 +1,32 @@
+import { Manrope } from "next/font/google";
+import "./globals.css";
+
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata = {
+  title: {
+    default: "Get Reset",
+    template: "%s | Get Reset",
+  },
+  description: "Travel essentials for better rest.",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={manrope.className}>
+        <Header />
+
+        {children}
+
+        <Footer />
+      </body>
+    </html>
+  );
+}
