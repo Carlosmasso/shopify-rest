@@ -21,12 +21,12 @@ export default function Statement() {
                 "mt-8 leading-[1.05] tracking-tight " + typography.statement
               }
             >
-              Rest isn't something
+              Rest isn&apos;t something
               <br />
               you earn.
               <br />
               <span className="text-[var(--primary)]">
-                It's something you need.
+                It&apos;s something you need.
               </span>
             </h2>
           </div>

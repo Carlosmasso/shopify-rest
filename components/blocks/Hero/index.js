@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animations/FadeIn";
@@ -21,13 +23,17 @@ export default function Hero() {
 
           <span className={typography.section}>
             Carefully selected products to help you disconnect, recover and
-            recharge— whether you're travelling, working shifts or simply taking
-            a well-earned break.
+            recharge — whether you&apos;re travelling, working shifts or
+            simply taking a well-earned break.
           </span>
 
           <div className="mt-12 flex flex-wrap gap-4">
-            <Button>Shop now</Button>
-            <Button variant="secondary">Learn more</Button>
+            <Link href="/products">
+              <Button>Shop now</Button>
+            </Link>
+            <Link href="/about">
+              <Button variant="secondary">Learn more</Button>
+            </Link>
           </div>
         </FadeIn>
 

@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { LoaderCircle } from "lucide-react";
 
+import Money from "@/components/ui/Money";
+
 export default function SearchButton() {
   const router = useRouter();
   const ref = useRef(null);
@@ -16,14 +18,16 @@ export default function SearchButton() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const visibleResults = open && query.trim().length >= 2 ? results : [];
+
   useEffect(() => {
     if (!open || query.trim().length < 2) {
-      setResults([]);
       return;
     }
 
-    setLoading(true);
     const timeout = setTimeout(async () => {
+      setLoading(true);
+
       const response = await fetch(
         `/api/search?q=${encodeURIComponent(query)}`,
       );
@@ -121,7 +125,7 @@ export default function SearchButton() {
         <Search size={20} />
       </button>
 
-      {open && results?.length > 0 && (
+      {open && visibleResults.length > 0 && (
         <div
           className="
             absolute
@@ -140,7 +144,7 @@ export default function SearchButton() {
             duration-200
           "
         >
-          {results.map((product) => (
+          {visibleResults.map((product) => (
             <Link
               key={product.id}
               onClick={() => setOpen(false)}
@@ -159,7 +163,10 @@ export default function SearchButton() {
                 <p className="font-medium">{product.title}</p>
 
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  €{product.price.amount}
+                  <Money
+                    amount={product.price.amount}
+                    currencyCode={product.price.currencyCode}
+                  />
                 </p>
               </div>
             </Link>

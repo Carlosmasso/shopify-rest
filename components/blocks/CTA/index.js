@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Container from "@/components/layout/Container";
 import Section from "@/components/ui/Section";
 import FadeIn from "@/components/animations/FadeIn";
@@ -23,7 +25,9 @@ export default function CTA() {
             </p>
 
             <div className="mt-12">
-              <Button size="lg">Shop Collection</Button>
+              <Link href="/products">
+                <Button size="lg">Shop Collection</Button>
+              </Link>
             </div>
           </div>
         </FadeIn>

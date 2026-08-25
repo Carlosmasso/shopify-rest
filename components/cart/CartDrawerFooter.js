@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import Money from "@/components/ui/Money";
 
 export default function CartDrawerFooter({ cart }) {
   if (!cart) return null;
@@ -9,7 +10,10 @@ export default function CartDrawerFooter({ cart }) {
         <span className="text-sm text-[var(--foreground-muted)]">Subtotal</span>
 
         <span className="text-lg font-semibold">
-          €{cart.cost.subtotalAmount.amount}
+          <Money
+            amount={cart.cost.subtotalAmount.amount}
+            currencyCode={cart.cost.subtotalAmount.currencyCode}
+          />
         </span>
       </div>
 

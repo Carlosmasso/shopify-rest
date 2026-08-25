@@ -32,7 +32,7 @@ export default async function ProductPage({ params }) {
   if (!product) {
     notFound();
   }
-  console.log(product);
+
   return (
     <>
       <ProductLayout

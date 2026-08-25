@@ -1,7 +1,8 @@
 import Link from "next/link";
 
+import Money from "@/components/ui/Money";
+
 export default function ProductCard({ product, featured = false }) {
-  console.log({ product });
   return (
     <Link href={`/products/${product.handle}`} className="group block">
       <article>
@@ -19,24 +20,16 @@ export default function ProductCard({ product, featured = false }) {
   "
         >
           {product.image && (
-            <img
-              src={product.image.url}
-              alt={product.title}
-              className={`
-        w-full
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-        ${featured ? "aspect-[16/10]" : "aspect-square"}
-    `}
-            />
+            <div
+              className={`relative w-full ${featured ? "aspect-[16/10]" : "aspect-square"}`}
+            >
+              <img
+                src={product.image.url}
+                alt={product.title}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           )}
-          {/* Badge temporal */}
-          <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-xs font-medium backdrop-blur">
-            New
-          </span>
-          {/* Flecha */}
           <div
             className="
               absolute bottom-5 right-5
@@ -69,7 +62,10 @@ export default function ProductCard({ product, featured = false }) {
                 : "mt-2 text-[var(--foreground-muted)]"
             }
           >
-            {product.price.amount} {product.price.currencyCode}
+            <Money
+              amount={product.price.amount}
+              currencyCode={product.price.currencyCode}
+            />
           </p>
         </div>
       </article>

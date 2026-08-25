@@ -74,7 +74,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="mt-6 leading-8 text-[var(--foreground-muted)]">
-            We believe wellness shouldn't feel complicated. The best products
+            We believe wellness shouldn&apos;t feel complicated. The best products
             quietly become part of your daily routine and help you feel better
             without demanding attention.
           </p>

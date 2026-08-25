@@ -10,7 +10,7 @@ export default function ProductFeatures() {
   return (
     <div className="mt-10 border-t border-[var(--border)] pt-8">
       <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-        Why you'll love it
+        Why you&apos;ll love it
       </h3>
 
       <ul className="mt-6 space-y-4">

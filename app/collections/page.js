@@ -9,18 +9,12 @@ export default async function CollectionsPage() {
   return (
     <>
       <PageHero
-        title="Collections"
-        description="Browse our collection of products."
-      />
-      <PageHero
         eyebrow="Shop"
         title="Collections"
         description="Explore products grouped around the moments when you need them most."
       />
       <Container>
         <section className="py-24">
-          <h1 className="mb-16 text-5xl font-semibold">Collections</h1>
-
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {collections.map((collection) => (
               <Link
@@ -28,12 +22,12 @@ export default async function CollectionsPage() {
                 href={`/collections/${collection.handle}`}
                 className="group"
               >
-                <div className="overflow-hidden rounded-[28px] bg-white">
+                <div className="aspect-square overflow-hidden rounded-[28px] bg-white">
                   {collection.image && (
                     <img
                       src={collection.image.url}
                       alt={collection.title}
-                      className="aspect-square w-full object-cover transition duration-700 group-hover:scale-105"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                     />
                   )}
                 </div>
