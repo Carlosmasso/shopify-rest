@@ -1,8 +1,8 @@
-import SearchButton from "./SearchButton";
 import CartButton from "./CartButton";
 import MobileDrawer from "./MobileDrawer";
+import SearchButton from "./SearchButton";
 
-export default function Actions() {
+export default function HeaderActions() {
   return (
     <div className="flex items-center gap-2">
       <SearchButton />

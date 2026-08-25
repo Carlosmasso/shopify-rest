@@ -4,10 +4,7 @@ import { useState } from "react";
 import ProductImage from "./ProductImage";
 
 export default function ProductGallery({ product }) {
-  const images =
-    product.images.length > 0
-      ? product.images
-      : [product.image];
+  const images = product.images.length > 0 ? product.images : [product.image];
 
   const [active, setActive] = useState(images[0]);
 

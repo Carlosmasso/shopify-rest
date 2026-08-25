@@ -19,27 +19,19 @@ export default function FeaturedProducts({ products }) {
                 Featured
               </span>
 
-              <h2 className="mt-4 text-5xl font-semibold">
-                Our Picks
-              </h2>
+              <h2 className="mt-4 text-5xl font-semibold">Our Picks</h2>
             </div>
           </div>
         </FadeIn>
 
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <ProductCard
-              product={featured}
-              featured
-            />
+            <ProductCard product={featured} featured />
           </div>
 
           <div className="space-y-10">
             {secondary.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>

@@ -11,7 +11,7 @@ export default async function CollectionsPage() {
       <PageHero
         title="Collections"
         description="Browse our collection of products."
-      />{" "}
+      />
       <PageHero
         eyebrow="Shop"
         title="Collections"

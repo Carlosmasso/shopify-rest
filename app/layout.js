@@ -3,6 +3,8 @@ import "./globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CartDrawerProvider } from "@/components/cart/CartDrawerProvider";
+import CartDrawer from "@/components/cart/CartDrawer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -14,18 +16,21 @@ export const metadata = {
     default: "Get Reset",
     template: "%s | Get Reset",
   },
-  description: "Travel essentials for better rest.",
+
+  description:
+    "Premium wellness products designed to help you rest, recover and recharge.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <Header />
-
-        {children}
-
-        <Footer />
+        <CartDrawerProvider>
+          <Header />
+          <CartDrawer />
+          {children}
+          <Footer />
+        </CartDrawerProvider>
       </body>
     </html>
   );

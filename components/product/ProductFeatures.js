@@ -15,14 +15,8 @@ export default function ProductFeatures() {
 
       <ul className="mt-6 space-y-4">
         {features.map((feature) => (
-          <li
-            key={feature}
-            className="flex items-center gap-3"
-          >
-            <Check
-              size={18}
-              className="text-[var(--primary)]"
-            />
+          <li key={feature} className="flex items-center gap-3">
+            <Check size={18} className="text-[var(--primary)]" />
 
             <span>{feature}</span>
           </li>

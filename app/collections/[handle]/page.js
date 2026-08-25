@@ -1,13 +1,36 @@
+import { notFound } from "next/navigation";
+
+import { getCollection } from "@/lib/shopify/collections";
+import { createMetadata } from "@/lib/seo";
+
 import Container from "@/components/layout/Container";
 import ProductGrid from "@/components/product/ProductGrid";
-import ProductCard from "@/components/product/ProductCard";
 import PageHero from "@/components/blocks/PageHero";
-import { getCollection } from "@/lib/shopify/collections";
+
+export async function generateMetadata({ params }) {
+  const { handle } = await params;
+
+  const collection = await getCollection(handle);
+
+  if (!collection) {
+    return {};
+  }
+
+  return createMetadata({
+    title: collection.title,
+    description: collection.description,
+    image: collection.image,
+  });
+}
 
 export default async function CollectionPage({ params }) {
   const { handle } = await params;
 
   const collection = await getCollection(handle);
+
+  if (!collection) {
+    notFound();
+  }
 
   return (
     <>
@@ -19,19 +42,7 @@ export default async function CollectionPage({ params }) {
 
       <Container>
         <section className="py-20">
-          <h1 className="text-5xl font-semibold">{collection.title}</h1>
-
-          <p className="mt-6 max-w-2xl text-[var(--foreground-muted)]">
-            {collection.description}
-          </p>
-
-          <div className="mt-16">
-            <ProductGrid>
-              {collection.products.nodes.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </ProductGrid>
-          </div>
+          <ProductGrid products={collection.products} />
         </section>
       </Container>
     </>

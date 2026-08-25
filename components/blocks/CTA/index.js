@@ -23,9 +23,7 @@ export default function CTA() {
             </p>
 
             <div className="mt-12">
-              <Button size="lg">
-                Shop Collection
-              </Button>
+              <Button size="lg">Shop Collection</Button>
             </div>
           </div>
         </FadeIn>

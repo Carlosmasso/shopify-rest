@@ -1,10 +1,14 @@
 import { Minus, Plus } from "lucide-react";
 
-export default function ProductQuantity({ quantity, onChange }) {
+export default function ProductQuantity({
+  quantity,
+  onChange,
+  label = "Quantity",
+}) {
   return (
     <div className="mt-10">
       <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--foreground-muted)]">
-        Quantity
+        {label}
       </p>
 
       <div className="flex w-fit items-center rounded-full border border-[var(--border)] bg-white">

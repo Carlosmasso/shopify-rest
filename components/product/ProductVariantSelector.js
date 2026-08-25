@@ -16,9 +16,8 @@ export default function ProductVariantSelector({
     // Buscamos la variante que coincide exactamente
     const variant = variants.find((variant) =>
       Object.entries(currentOptions).every(
-        ([name, optionValue]) =>
-          variant.options[name] === optionValue
-      )
+        ([name, optionValue]) => variant.options[name] === optionValue,
+      ),
     );
 
     if (variant) {
@@ -36,16 +35,13 @@ export default function ProductVariantSelector({
 
           <div className="flex flex-wrap gap-3">
             {values.map((value) => {
-              const active =
-                selectedVariant.options[optionName] === value;
+              const active = selectedVariant.options[optionName] === value;
 
               return (
                 <button
                   key={value}
                   type="button"
-                  onClick={() =>
-                    handleOptionChange(optionName, value)
-                  }
+                  onClick={() => handleOptionChange(optionName, value)}
                   className={`
                     rounded-full
                     border

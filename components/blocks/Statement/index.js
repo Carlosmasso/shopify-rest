@@ -16,7 +16,11 @@ export default function Statement() {
               Our philosophy
             </span>
 
-            <h2 className={"mt-8 leading-[1.05] tracking-tight " + typography.statement}>
+            <h2
+              className={
+                "mt-8 leading-[1.05] tracking-tight " + typography.statement
+              }
+            >
               Rest isn't something
               <br />
               you earn.

@@ -8,8 +8,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-[0_8px_30px_rgba(141,156,145,.25)]",
-        secondary: "border border-[var(--border)] bg-white hover:shadow-[0_12px_40px_rgba(141,156,145,.35)]]",
+        primary:
+          "bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] shadow-[0_8px_30px_rgba(141,156,145,.25)]",
+        secondary:
+          "border border-[var(--border)] bg-white hover:shadow-[0_12px_40px_rgba(141,156,145,.35)]]",
         ghost: "hover:shadow-[0_12px_40px_rgba(141,156,145,.35)]",
       },
 

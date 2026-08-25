@@ -18,7 +18,7 @@ export default function ProductInfo({ product }) {
   const [quantity, setQuantity] = useState(1);
 
   return (
-    <>
+    <div>
       <ProductBadge />
 
       <ProductTitle title={product.title} />
@@ -36,7 +36,7 @@ export default function ProductInfo({ product }) {
       <ProductFeatures />
 
       <ProductQuantity quantity={quantity} onChange={setQuantity} />
-      
+
       <ProductActions
         variantId={selectedVariant.id}
         quantity={quantity}
@@ -44,6 +44,6 @@ export default function ProductInfo({ product }) {
       />
 
       <ProductShipping />
-    </>
+    </div>
   );
 }

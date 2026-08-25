@@ -5,10 +5,7 @@ export default function ProductPrice({ price }) {
 
   return (
     <p className="mt-8 text-3xl font-semibold">
-      <Money
-        amount={price.amount}
-        currencyCode={price.currencyCode}
-      />
+      <Money amount={price.amount} currencyCode={price.currencyCode} />
     </p>
   );
 }

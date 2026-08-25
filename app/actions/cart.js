@@ -2,6 +2,7 @@
 
 import { createCart, addCartLine } from "@/lib/shopify/cart";
 import { getCartId, setCartId } from "@/lib/cart/cookies";
+import { revalidatePath } from "next/cache";
 
 export async function addToCart(variantId, quantity) {
   console.log("1️⃣ Variant:", variantId);
@@ -29,7 +30,10 @@ export async function addToCart(variantId, quantity) {
 
   console.log("5️⃣ Add line:", result);
 
+  revalidatePath("/", "layout");
+
   return {
     success: true,
+    error: null,
   };
 }

@@ -78,27 +78,15 @@ body::before {
 
   pointer-events: none;
 
-  opacity: .35;
+  opacity: 0.35;
 
   background-image:
-
-    linear-gradient(
-      rgba(0,0,0,.025) 1px,
-      transparent 1px
-    ),
-
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.025) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
 
   background-size: 80px 80px;
 
-  mask-image:
-      radial-gradient(circle at center,
-      black,
-      transparent 85%);
+  mask-image: radial-gradient(circle at center, black, transparent 85%);
 }
 
 body::after {
@@ -110,16 +98,14 @@ body::after {
   pointer-events: none;
 
   background:
-
     radial-gradient(
       circle at top right,
-      rgba(141,156,145,.18),
+      rgba(141, 156, 145, 0.18),
       transparent 40%
     ),
-
     radial-gradient(
       circle at bottom left,
-      rgba(216,207,194,.18),
+      rgba(216, 207, 194, 0.18),
       transparent 35%
     );
 

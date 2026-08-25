@@ -8,9 +8,7 @@ export default function ImageBanner({
 }) {
   return (
     <FadeIn>
-      <div
-        className={`relative overflow-hidden rounded-[40px] ${height}`}
-      >
+      <div className={`relative overflow-hidden rounded-[40px] ${height}`}>
         <img
           src={image}
           alt={title}

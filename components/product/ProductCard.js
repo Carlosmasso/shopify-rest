@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function ProductCard({ product, featured = false }) {
-  console.log({product})
+  console.log({ product });
   return (
     <Link href={`/products/${product.handle}`} className="group block">
       <article>
@@ -69,8 +69,7 @@ export default function ProductCard({ product, featured = false }) {
                 : "mt-2 text-[var(--foreground-muted)]"
             }
           >
-            {product.price.amount}{" "}
-            {product.price.currencyCode}
+            {product.price.amount} {product.price.currencyCode}
           </p>
         </div>
       </article>
